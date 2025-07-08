@@ -1,0 +1,9 @@
+In this project, we worked on building a machine learning model for house price prediction in Bangalore. The process began by importing necessary Python modules for data handling. After loading the dataset into a DataFrame, we explored the columns to understand the structure. Due to the large size of the dataset and presence of null values, all missing entries were removed for better model performance.
+
+To analyze data distribution, we calculated skewness and kurtosis for important features. For the 'size' column, which contained strings like "2 BHK" and "4 Bedroom", we created a new column with only numerical values. The 'total_sqft' column had value ranges, which we converted to average values using a custom Python function. We calculated correlation and covariance to examine relationships between features and the target variable.
+
+Feature engineering included creating a 'price_per_sqft' column. Using dimensionality reduction and groupby aggregation, we grouped locations with less than 10 entries under the label 'other'. Outliers were removed using visualizations and statistical methods such as Z-score. Unrealistic combinations of bedroom count and square footage were also handled.
+
+Finally, non-relevant columns were dropped, and the categorical 'location' feature was converted using one-hot encoding. This completed the data cleaning and exploratory data analysis (EDA) phase.
+
+After cleaning the data, we used train-test split to separate input features and the target variable for building a prediction model. A Linear Regression model was developed, achieving 92% accuracy. To evaluate model performance, we applied cross-validation techniques and made predictions on the test set. To identify the best-performing model, we used a GridSearchCV pipeline to test various regression models. After comparing results, Linear Regression outperformed others, making it the best fit for predicting house prices in Bangalore with a high accuracy of 92%.
